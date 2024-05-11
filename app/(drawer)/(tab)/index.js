@@ -1,5 +1,5 @@
 import { ScrollView } from "react-native";
-import Card from "../components/card";
+import Card from "../../../components/card";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
         }
       />
       <Card
-        path={require("../../assets/curriculumOn.jpg")}
+        path={require("../../../assets/curriculumOn.jpg")}
         userName={"Lucas Cincunegui"}
         content={",yhe4wku "}
       />
@@ -22,7 +22,7 @@ export default function Home() {
         }
       />
       <Card
-        path={require("../../assets/curriculumOn.jpg")}
+        path={require("../../../assets/curriculumOn.jpg")}
         userName={"Lucas Cincunegui"}
         content={
           "tcu34htvuvjnyirnfcghvtrsukctgneuyfcrn,yhe4wku vthbwechtewjmgerluiyhjçsdlmhdrgjkirjgiuwrhjlgiwrhtgoiuhwgijwoigwjfperw"
