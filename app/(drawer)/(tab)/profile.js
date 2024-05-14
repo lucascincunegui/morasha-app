@@ -1,49 +1,22 @@
-import { Text, TouchableOpacity, View } from "react-native";
-import { Feather, Ionicons, MaterialIcons } from "@expo/vector-icons";
+import { Image, Text, View } from "react-native";
+import Divider from "../../../components/divider";
 
 export default function Profile() {
-  const button = "p-5 flex-row items-center";
   return (
     <View className="flex-1 flex-col">
-      <TouchableOpacity className={button}>
-        <Feather
-          name="edit-3"
-          style={{ marginRight: 20 }}
-          size={20}
-          color="black"
-        />
-        <Text className="text-base">Editar Perfil</Text>
-      </TouchableOpacity>
-      <TouchableOpacity className={button}>
-        <Ionicons
-          name="notifications-outline"
-          size={20}
-          style={{ marginRight: 20 }}
-          color="black"
-        />
-        <Text className="text-base">Notificações</Text>
-      </TouchableOpacity>
-      <TouchableOpacity className={button}>
-        <Feather
-          name="lock"
-          style={{ marginRight: 20 }}
-          size={20}
-          color="black"
-        />
-        <Text className="text-base">Privacidade e segurança</Text>
-      </TouchableOpacity>
-      <TouchableOpacity className={button}>
-        <MaterialIcons
-          name="favorite-border"
-          size={20}
-          style={{ marginRight: 20 }}
-          color="black"
-        />
-        <Text className="text-base">Favoritos</Text>
-      </TouchableOpacity>
-      <TouchableOpacity className={button}>
-        <Text className="text-base">Sair</Text>
-      </TouchableOpacity>
+      <View className="flex-row  h-1/4 justify-around items-center">
+        <View className="w-1/4 h-full flex-row  items-center justify-center">
+          <Image
+            source={require("../../../assets/curriculumOn.jpg")}
+            className="w-20 h-20 rounded-full"
+          />
+        </View>
+        <View className="w-9/12 h-full px-7 py-10 flex-col">
+          <Text className="mb-4">Username</Text>
+          <Text>Hello world!</Text>
+        </View>
+      </View>
+      <Divider />
     </View>
   );
 }
