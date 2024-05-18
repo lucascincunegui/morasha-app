@@ -6,7 +6,7 @@ import {
   Entypo,
 } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import { primary, primaryShade } from "../../../components/colors";
+import { primary, primaryShade } from "../../../components/ui/colors";
 
 export default function TabLayout() {
   return (
@@ -28,7 +28,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="news"
+        name="news/news"
         options={{
           title: "Noticias",
           tabBarIcon: ({ color }) => (
@@ -37,7 +37,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="calendar"
+        name="calendar/calendar"
         options={{
           headerTitle: "Calendario de Atividades",
           tabBarIcon: ({ color }) => (
@@ -56,7 +56,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="doacoes"
+        name="doacoes/doacoes"
         options={{
           headerTitle: "Informações Bancarias",
           tabBarIcon: ({ color }) => (
@@ -69,7 +69,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="profile"
+        name="profile/profile"
         options={{
           headerTitle: "Meu Perfil",
           tabBarIcon: ({ color }) => (

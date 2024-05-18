@@ -3,9 +3,7 @@ module.exports = {
     "./app.{js,jsx,ts,tsx}",
     "./app/**/*.{js,jsx,ts,tsx}",
     "./app/**/**/*.{js,jsx,ts,tsx}",
-    "./app/components.{js,jsx,ts,tsx}",
-    "./app/components/*.{js,jsx,ts,tsx}",
-    "./app/components/**/*.{js,jsx,ts,tsx}",
+    "./components/**/**/*.{js,jsx,ts,tsx}",
   ],
 
   theme: {
@@ -17,5 +15,5 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [],
+  plugins: ["tailwindcss-react-native/babel"],
 };

@@ -1,53 +1,10 @@
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Drawer } from "expo-router/drawer";
 import { AntDesign } from "@expo/vector-icons";
-import { primary } from "../../components/colors";
-import {
-  DrawerContentScrollView,
-  DrawerItem,
-  DrawerItemList,
-} from "@react-navigation/drawer";
-import { useRouter } from "expo-router";
-import { Image, Text, View } from "react-native";
+import { primary } from "../../components/ui/colors";
+import { Image } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import Divider from "../../components/divider";
-
-function CustomDrawerContent(props) {
-  const router = useRouter();
-  const { top, bottom } = useSafeAreaInsets();
-
-  return (
-    <View className="flex-1 bg-bg_gray ">
-      <DrawerContentScrollView
-        contentContainerStyle={{ paddingTop: top }}
-        {...props}
-      >
-        <Image
-          style={{
-            width: 300,
-            height: 250,
-            alignSelf: "center",
-            backgroundColor: "black",
-          }}
-          source={require("../../assets/splash.png")}
-        />
-        <View className="pt-3">
-          <DrawerItemList {...props} />
-          <DrawerItem label={"Sair"} onPress={() => router.replace("/")} />
-        </View>
-      </DrawerContentScrollView>
-      <Divider />
-      <View
-        style={{
-          padding: 20,
-          paddingBottom: bottom + 20,
-        }}
-      >
-        <Text>asdef@.com.br</Text>
-      </View>
-    </View>
-  );
-}
+import CustomDrawerContent from "../../components/templates/customDrawerContent";
 
 export default function Layout() {
   const { top } = useSafeAreaInsets();
@@ -95,7 +52,7 @@ export default function Layout() {
           }}
         />
         <Drawer.Screen
-          name="settings"
+          name="settings/settings"
           options={{
             drawerLabel: "Configurações",
             headerTitle: "Configurações",

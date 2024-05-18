@@ -1,5 +1,5 @@
 import { Image, Text, View } from "react-native";
-import Divider from "../../../components/divider";
+import Divider from "../../../../components/templates/divider";
 
 export default function Profile() {
   return (
@@ -7,7 +7,7 @@ export default function Profile() {
       <View className="flex-row  h-1/4 justify-around items-center">
         <View className="w-1/4 h-full flex-row  items-center justify-center">
           <Image
-            source={require("../../../assets/curriculumOn.jpg")}
+            source={require("../../../../assets/curriculumOn.jpg")}
             className="w-20 h-20 rounded-full"
           />
         </View>
