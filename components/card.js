@@ -8,7 +8,6 @@ export default function Card({ path, userName, content }) {
           source={path ? path : require("../assets/user.png")}
           className="w-14 h-14 mr-4 rounded-full"
         />
-
         <Text>{userName}</Text>
       </View>
       <View>
