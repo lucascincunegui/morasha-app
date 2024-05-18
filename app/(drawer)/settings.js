@@ -41,9 +41,6 @@ export default function Settings() {
         />
         <Text className="text-base">Favoritos</Text>
       </TouchableOpacity>
-      <TouchableOpacity className={button}>
-        <Text className="text-base">Sair</Text>
-      </TouchableOpacity>
     </View>
   );
 }

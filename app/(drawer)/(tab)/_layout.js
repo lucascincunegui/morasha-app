@@ -6,15 +6,20 @@ import {
   Entypo,
 } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import { primary, primaryShade } from "../../../components/colors";
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
+        headerStyle: {
+          backgroundColor: "#f1f1f1",
+          borderBottomColor: "#a7abaf",
+          borderBottomWidth: 1,
+        },
         tabBarShowLabel: false,
-        tabBarActiveTintColor: "#f8aa06",
-        tabBarInactiveTintColor: "gray",
+        tabBarActiveTintColor: primary,
         tabBarLabelStyle: { fontSize: 12 },
         tabBarStyle: {
           backgroundColor: "#f6f6f6",
@@ -34,7 +39,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="calendar"
         options={{
-          title: "Calendario de Atividades",
+          headerTitle: "Calendario de Atividades",
           tabBarIcon: ({ color }) => (
             <AntDesign name="calendar" size={23} color={color} />
           ),
@@ -44,7 +49,7 @@ export default function TabLayout() {
         name="index"
         options={{
           headerShown: false,
-          title: "Inicio",
+          headerTitle: "Inicio",
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="home" color={color} />
           ),
@@ -53,7 +58,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="doacoes"
         options={{
-          title: "Informações bancarias",
+          headerTitle: "Informações Bancarias",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
               name="qrcode-scan"
@@ -66,7 +71,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="profile"
         options={{
-          title: "Perfil",
+          headerTitle: "Meu Perfil",
           tabBarIcon: ({ color }) => (
             <FontAwesome size={25} name="user-circle-o" color={color} />
           ),
