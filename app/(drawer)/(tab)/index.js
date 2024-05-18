@@ -1,5 +1,5 @@
 import { ScrollView } from "react-native";
-import Card from "../../../components/card";
+import Card from "../../../components/templates/card";
 
 export default function Home() {
   return (
