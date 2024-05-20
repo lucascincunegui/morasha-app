@@ -1,5 +1,6 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import { Feather, Ionicons, MaterialIcons } from "@expo/vector-icons";
+import Divider from "../../../components/templates/divider";
 
 export default function Settings() {
   const button = "p-5 flex-row items-center";
@@ -14,6 +15,7 @@ export default function Settings() {
         />
         <Text className="text-base">Editar Perfil</Text>
       </TouchableOpacity>
+      <Divider />
       <TouchableOpacity className={button}>
         <Ionicons
           name="notifications-outline"
@@ -23,6 +25,7 @@ export default function Settings() {
         />
         <Text className="text-base">Notificações</Text>
       </TouchableOpacity>
+      <Divider />
       <TouchableOpacity className={button}>
         <Feather
           name="lock"
@@ -32,6 +35,7 @@ export default function Settings() {
         />
         <Text className="text-base">Privacidade e segurança</Text>
       </TouchableOpacity>
+      <Divider />
       <TouchableOpacity className={button}>
         <MaterialIcons
           name="favorite-border"
@@ -41,6 +45,7 @@ export default function Settings() {
         />
         <Text className="text-base">Favoritos</Text>
       </TouchableOpacity>
+      <Divider />
     </View>
   );
 }
