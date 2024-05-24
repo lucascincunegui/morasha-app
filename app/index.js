@@ -1,6 +1,7 @@
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Link, useNavigation } from "expo-router";
 
 export default function Login() {
   const [password, setPassword] = useState("");
@@ -11,11 +12,13 @@ export default function Login() {
     setShowPassword(!showPassword);
   };
 
+  const navigation = useNavigation();
+
   return (
     <View className="flex-1 justify-center items-center">
       <Image
         className="w-56 h-56 mb-16 items-center justify-center bg-black rounded-full"
-        source={require("../../../assets/splash.png")}
+        source={require("../assets/splash.png")}
       />
       <TextInput
         className="border rounded-md m-3 p-2 w-3/4 "
@@ -43,7 +46,10 @@ export default function Login() {
           />
         </TouchableOpacity>
       </View>
-      <TouchableOpacity className="items-center m-3 bg-primary rounded-md p-3 w-3/4">
+      <TouchableOpacity
+        onPress={() => navigation.navigate("(drawer)")}
+        className="items-center m-3 bg-primary rounded-md p-3 w-3/4"
+      >
         <Text className="font-bold">Entrar</Text>
       </TouchableOpacity>
       <Text className="text-xs">

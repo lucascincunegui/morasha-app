@@ -62,7 +62,7 @@ export default function Layout() {
           }}
         />
         <Drawer.Screen
-          name="login/login"
+          name="login"
           options={{
             drawerLabel: "Login",
             headerShown: false,
