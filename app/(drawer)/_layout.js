@@ -61,6 +61,16 @@ export default function Layout() {
             ),
           }}
         />
+        <Drawer.Screen
+          name="login"
+          options={{
+            drawerLabel: "Login",
+            headerShown: false,
+            drawerIcon: ({ size, color }) => (
+              <AntDesign size={size} color={color} name="login" />
+            ),
+          }}
+        />
       </Drawer>
     </GestureHandlerRootView>
   );
