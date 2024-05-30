@@ -1,12 +1,11 @@
 import React from "react";
 import {
-  FontAwesome,
-  AntDesign,
+  FontAwesome5,
   MaterialCommunityIcons,
-  Entypo,
+  Ionicons,
 } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import { primary, primaryShade } from "../../../components/ui/colors";
+import { primary } from "../../../components/ui/colors";
 
 export default function TabLayout() {
   return (
@@ -31,18 +30,36 @@ export default function TabLayout() {
         name="news/news"
         options={{
           title: "Noticias",
-          tabBarIcon: ({ color }) => (
-            <Entypo name="megaphone" size={23} color={color} />
-          ),
+          tabBarIcon: ({ focused, size, color }) => {
+            if (focused) {
+              return <Ionicons size={27} color={color} name="megaphone" />;
+            }
+
+            return (
+              <Ionicons size={24} color={color} name="megaphone-outline" />
+            );
+          },
         }}
       />
       <Tabs.Screen
         name="calendar/calendar"
         options={{
           headerTitle: "Calendario de Atividades",
-          tabBarIcon: ({ color }) => (
-            <AntDesign name="calendar" size={23} color={color} />
-          ),
+          tabBarIcon: ({ focused, size, color }) => {
+            if (focused) {
+              return (
+                <Ionicons size={28} color={color} name="calendar-number" />
+              );
+            }
+
+            return (
+              <Ionicons
+                size={25}
+                color={color}
+                name="calendar-number-outline"
+              />
+            );
+          },
         }}
       />
       <Tabs.Screen
@@ -50,31 +67,47 @@ export default function TabLayout() {
         options={{
           headerShown: false,
           headerTitle: "Inicio",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="home" color={color} />
-          ),
+          tabBarIcon: ({ focused, size, color }) => {
+            if (focused) {
+              return <Ionicons size={size + 3} color={color} name="home" />;
+            }
+
+            return <Ionicons size={size} color={color} name="home-outline" />;
+          },
         }}
       />
       <Tabs.Screen
         name="doacoes/doacoes"
         options={{
           headerTitle: "Informações Bancarias",
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons
-              name="qrcode-scan"
-              size={23}
-              color={color}
-            />
-          ),
+          tabBarIcon: ({ focused, size, color }) => {
+            if (focused) {
+              return (
+                <MaterialCommunityIcons size={33} color={color} name="qrcode" />
+              );
+            }
+
+            return (
+              <MaterialCommunityIcons
+                size={24}
+                color={color}
+                name="qrcode-scan"
+              />
+            );
+          },
         }}
       />
       <Tabs.Screen
         name="profile/profile"
         options={{
           headerTitle: "Meu Perfil",
-          tabBarIcon: ({ color }) => (
-            <FontAwesome size={25} name="user-circle-o" color={color} />
-          ),
+          tabBarIcon: ({ focused, size, color }) => {
+            if (focused) {
+              return <FontAwesome5 size={26} color={color} name="user-alt" />;
+            }
+
+            return <FontAwesome5 size={24} color={color} name="user" />;
+          },
         }}
       />
     </Tabs>

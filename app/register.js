@@ -1,6 +1,6 @@
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import React from "react";
-import { Link, useNavigation } from "expo-router";
+import { useNavigation } from "expo-router";
 import InputPassword from "../components/templates/inputPasword";
 
 export default function Login() {
@@ -29,14 +29,8 @@ export default function Login() {
           onPress={() => navigation.navigate("(drawer)")}
           className="items-center m-3 bg-primary rounded-md p-3 w-3/4"
         >
-          <Text className="font-bold">Entrar</Text>
+          <Text className="font-bold">Pronto!</Text>
         </TouchableOpacity>
-        <Text className="text-xs">
-          Ainda nao possui uma conta?{" "}
-          <Link className="font-semibold" href={"./register"}>
-            Cadastre-se aqui
-          </Link>
-        </Text>
       </View>
     </View>
   );

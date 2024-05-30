@@ -1,6 +1,6 @@
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Drawer } from "expo-router/drawer";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Ionicons } from "@expo/vector-icons";
 import { primary } from "../../components/ui/colors";
 import { Image } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -46,9 +46,13 @@ export default function Layout() {
           name="(tab)"
           options={{
             drawerLabel: "Inicio",
-            drawerIcon: ({ size, color }) => (
-              <AntDesign size={size} color={color} name="home" />
-            ),
+            drawerIcon: ({ focused, size, color }) => {
+              if (focused) {
+                return <Ionicons size={size} color={color} name="home" />;
+              }
+
+              return <Ionicons size={size} color={color} name="home-outline" />;
+            },
           }}
         />
         <Drawer.Screen
@@ -56,19 +60,15 @@ export default function Layout() {
           options={{
             drawerLabel: "Configurações",
             headerTitle: "Configurações",
-            drawerIcon: ({ size, color }) => (
-              <AntDesign size={size} color={color} name="setting" />
-            ),
-          }}
-        />
-        <Drawer.Screen
-          name="login"
-          options={{
-            drawerLabel: "Login",
-            headerShown: false,
-            drawerIcon: ({ size, color }) => (
-              <AntDesign size={size} color={color} name="login" />
-            ),
+            drawerIcon: ({ focused, size, color }) => {
+              if (focused) {
+                return <Ionicons size={size} color={color} name="settings" />;
+              }
+
+              return (
+                <Ionicons size={size} color={color} name="settings-outline" />
+              );
+            },
           }}
         />
       </Drawer>
