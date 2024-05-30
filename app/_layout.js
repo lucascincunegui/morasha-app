@@ -9,6 +9,7 @@ export default function Layout() {
     >
       <Stack.Screen name="index" />
       <Stack.Screen name="(drawer)" />
+      <Stack.Screen name="register" />
     </Stack>
   );
 }
