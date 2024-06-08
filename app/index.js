@@ -1,7 +1,7 @@
-import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Link, useNavigation } from "expo-router";
-import InputPassword from "../components/templates/inputPasword";
+import Input from "../components/templates/input";
 
 export default function Login() {
   const navigation = useNavigation();
@@ -11,18 +11,16 @@ export default function Login() {
       <View className="bg-black w-full h-1/2 flex-1 justify-center items-center">
         <Image
           className="w-80 h-80 mt-10 items-center justify-center "
-          source={require("../assets/splash.png")}
+          source={require("../assets/logoOriginal.jpg")}
         />
       </View>
-      <View className="bg-bg_gray w-full h-1/2 flex-1 justify-around items-center">
+      <View className="bg-gray w-full h-1/2 flex-1 justify-around items-center">
         <View className="w-3/4 ">
-          <TextInput
-            className="border rounded-md p-2 mb-3 mt-3 "
-            placeholder="Nome de usuário..."
-          />
-          <InputPassword
-            placeholder={"Digite sua senha..."}
-            showPasswordIcon={true}
+          <Input label={"Nome de usuário"} placeholder={"Digite seu nome"} />
+          <Input
+            label={"Senha"}
+            placeholder={"Digite sua senha"}
+            secret={true}
           />
         </View>
         <TouchableOpacity

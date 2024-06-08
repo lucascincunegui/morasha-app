@@ -1,37 +1,44 @@
-import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { useNavigation } from "expo-router";
-import InputPassword from "../components/templates/inputPasword";
+import Input from "../components/templates/input";
 
-export default function Login() {
+export default function Register() {
   const navigation = useNavigation();
 
   return (
-    <View className="flex-1">
-      <View className="bg-black w-full h-1/2 flex-1 justify-center items-center">
+    <ScrollView className="flex-1 h-full">
+      <View className="bg-black w-full flex-1 justify-center items-center">
         <Image
-          className="w-80 h-80 mt-10 items-center justify-center "
-          source={require("../assets/splash.png")}
+          className="w-52 h-52 items-center justify-center "
+          source={require("../assets/logoOriginal.jpg")}
         />
       </View>
-      <View className="bg-bg_gray w-full h-1/2 flex-1 justify-around items-center">
-        <View className="w-3/4 ">
-          <TextInput
-            className="border rounded-md p-2 mb-3 mt-3 "
-            placeholder="Nome de usuário..."
+      <View className="bg-gray flex-1 w-full justify-around items-center">
+        <View className="w-3/4">
+          <Input
+            label={"Celular ou email"}
+            placeholder={"Seu número ou email"}
           />
-          <InputPassword
-            placeholder={"Digite sua senha..."}
-            showPasswordIcon={true}
+
+          <Input label={"Nome de usuario"} placeholder={"Seu nome"} />
+
+          <Input
+            label={"Data de nascimento"}
+            placeholder={new Date().toLocaleDateString()}
           />
+
+          <Input label={"Senha"} placeholder={"Nova senha"} secret={true} />
         </View>
+
+        {/* ----------------- Button ----------------- */}
         <TouchableOpacity
           onPress={() => navigation.navigate("(drawer)")}
           className="items-center m-3 bg-primary rounded-md p-3 w-3/4"
         >
-          <Text className="font-bold">Pronto!</Text>
+          <Text className="font-semibold">Pronto!</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 }

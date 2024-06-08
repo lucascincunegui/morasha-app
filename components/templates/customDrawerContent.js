@@ -13,14 +13,14 @@ export default function CustomDrawerContent(props) {
   const { top, bottom } = useSafeAreaInsets();
 
   return (
-    <View className="flex-1 bg-bg_gray ">
+    <View className="flex-1 bg-gray ">
       <DrawerContentScrollView
         contentContainerStyle={{ paddingTop: top }}
         {...props}
       >
         <Image
           className="w-72 h-40 self-center bg-black"
-          source={require("../../assets/splash.png")}
+          source={require("../../assets/logoOriginal.jpg")}
         />
         <View className="pt-3">
           <DrawerItemList {...props} />
