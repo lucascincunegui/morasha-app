@@ -23,6 +23,9 @@ export default function Login() {
             secret={true}
           />
         </View>
+
+        {/* ----------------- Button ----------------- */}
+
         <TouchableOpacity
           onPress={() => navigation.navigate("(drawer)")}
           className="items-center m-3 bg-primary rounded-md p-3 w-3/4"

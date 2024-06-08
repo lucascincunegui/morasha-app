@@ -7,14 +7,14 @@ export default function Register() {
   const navigation = useNavigation();
 
   return (
-    <ScrollView className="flex-1 h-full">
-      <View className="bg-black w-full flex-1 justify-center items-center">
+    <View className="flex-1">
+      <View className="bg-black w-full h-2/6 justify-center items-center">
         <Image
-          className="w-52 h-52 items-center justify-center "
+          className="w-52 h-52 mt-5 items-center justify-center"
           source={require("../assets/logoOriginal.jpg")}
         />
       </View>
-      <View className="bg-gray flex-1 w-full justify-around items-center">
+      <View className="bg-gray w-full h-4/6 justify-around items-center pt-6 pb-16">
         <View className="w-3/4">
           <Input
             label={"Celular ou email"}
@@ -32,6 +32,7 @@ export default function Register() {
         </View>
 
         {/* ----------------- Button ----------------- */}
+
         <TouchableOpacity
           onPress={() => navigation.navigate("(drawer)")}
           className="items-center m-3 bg-primary rounded-md p-3 w-3/4"
@@ -39,6 +40,6 @@ export default function Register() {
           <Text className="font-semibold">Pronto!</Text>
         </TouchableOpacity>
       </View>
-    </ScrollView>
+    </View>
   );
 }
